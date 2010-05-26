@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use FindBin::libs;
+use 5.10.1;
+use AE;
+use Shirokaned;
+
+our $VERSION = 0.01;
+
+my $app = Shirokaned->new_with_options();
+$app->run();
+
+AE::cv->recv;
+
+exit;
+
+
+__END__
+
+=head1 SYNOPSIS
+
+    % shirokaned
+
