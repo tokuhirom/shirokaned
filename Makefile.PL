@@ -1,13 +1,13 @@
 use inc::Module::Install;
 name 'shirokaned';
-all_from 'lib/shirokaned.pm';
+all_from 'lib/Shirokaned.pm';
 
 requires 'Twiggy';
 requires 'AnyEvent';
 requires 'Mouse';
 requires 'MouseX::Getopt';
 requires 'FindBin::libs';
-requries 'KyotoCabinet';
+requires 'KyotoCabinet';
 test_requires 'Test::TCP';
 
 readme_markdown_from 'shirokaned';

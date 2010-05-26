@@ -2,3 +2,6 @@
 allow=refs
 [-Subroutines::ProhibitSubroutinePrototypes]
 [-Subroutines::ProhibitExplicitReturnUndef]
+[TestingAndDebugging::RequireUseStrict]
+equivalent_modules = Mouse Mouse::Role Moose
+[-Subroutines::ProhibitExplicitReturnUndef]
