@@ -182,12 +182,16 @@ sub _http_handler {
         my $env = shift;
         my $path = $env->{PATH_INFO};
         $path =~ s!^/!!;
-        my $content = $db->get($path);
-        my $headers = ['Content-Length' => length($content)];
-        if ($content_type) {
-            push @$headers, 'Content-Type' => $content_type;
+        if (my $content = $db->get($path)) {
+            my $headers = ['Content-Length' => length($content)];
+            if ($content_type) {
+                push @$headers, 'Content-Type' => $content_type;
+            }
+            [200, $headers, [$content]];
+        } else {
+            my $content = 'not found';
+            [404, ['Content-Length' => length($content), 'Content-Type' => 'text/plain'], [$content]];
         }
-        [200, $headers, [$content]];
     };
 }
 
