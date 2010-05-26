@@ -196,3 +196,18 @@ sub error {
 }
 
 __PACKAGE__->meta->make_immutable;
+__END__
+
+=head1 SYNOPSIS
+
+    % shirokaned
+
+=head1 OVERVIEW
+
+    - master-master replication
+    - in memory cache
+    - lru
+    - feed content in http
+    - stable
+    - fast
+

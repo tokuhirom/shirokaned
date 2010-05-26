@@ -10,7 +10,7 @@ requires 'FindBin::libs';
 requires 'KyotoCabinet';
 test_requires 'Test::TCP';
 
-readme_markdown_from 'shirokaned';
+readme_markdown_from 'lib/Shirokaned.pm';
 tests 't/*.t t/*/*.t t/*/*/*.t t/*/*/*/*.t';
 test_requires 'Test::More';
 test_requires 'YAML';
