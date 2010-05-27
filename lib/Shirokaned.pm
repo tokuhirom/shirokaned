@@ -196,7 +196,7 @@ sub _http_handler {
 }
 
 sub error {
-    print STDERR "@_";
+    print STDERR "@_\n";
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -214,4 +214,11 @@ __END__
     - feed content in http
     - stable
     - fast
+
+=head1 BENCHMARK
+
+    tokuhirom@gpath% gcc -O2 -I picoev testsetclient.c picoev/picoev_epoll.c; ./a.out -p 7000 -n 10000 -c 100
+    8140.792321 reqs./sec. (10004 in 1.228873 seconds)
+    tokuhirom@gpath% gcc -O2 -I picoev testgetclient.c picoev/picoev_epoll.c; ./a.out -p 7000 -n 10000 -c 100
+    7939.014582 reqs./sec. (10005 in 1.260232 seconds)
 
