@@ -1,0 +1,3 @@
+env = Environment(CPPPATH = ['picoev/'])
+env.Program('setter', ['picoev/picoev_epoll.c', 'testgetclient.c'])
+env.Program('getter', ['picoev/picoev_epoll.c', 'testsetclient.c'])

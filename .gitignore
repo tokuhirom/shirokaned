@@ -5,3 +5,4 @@ ppport.h
 *.sw[po]
 *.bak
 *.old
+.sconsign.dblite
